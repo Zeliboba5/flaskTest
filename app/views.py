@@ -40,7 +40,7 @@ def dictionary(path):
 		response = { 'result': dict.get(path), 'time': strftime("%Y-%m-%d %H:%M:%S", gmtime())}
 		return jsonify(response), 200
 	elif request.method == 'PUT':
-		json = request.json #request.get_json() введен только в 0.10 и на версии 0.9 альтернативы .json нет
+		json = request.json 
 		value = json.get("value")
 		if path == '':					#В техзадании Route: /dictionary/<key>, но при этом запрос "аналогичен
 			key = json.get("key") 	    #POST", т.е. ключ в параметрах, использовал комбинированный подход
